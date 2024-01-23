@@ -57,18 +57,19 @@ def collect_urls(start: str, end: str, path: str, baseurl:str):
         txt = r.text
         soup = BeautifulSoup(txt, features="html.parser")
         links = soup.find_all('a', {'class': 'homeheadline'})
-        for i in links:
-            link = i['href']
-            if day in link:
-                if path.exists():
-                    mode = 'a'
-                else:
-                    mode = 'w'
-                with open(path, mode) as f:
-                    f.write(f"{link}\n")
+        hrefs = [i['href'] for i in links if day in i['href']]
+        if path.exists():
+            mode = 'a'
+        else:
+            mode = 'w'
+        with open(path, mode) as f:
+            for link in hrefs:
+                f.write(f"{link}\n")
+
         
         sleep(1)
 
 #start: 07/07
 #end: 12/24
-collect_urls('2023/09/07', '2023/09/20', './data/urls_log.txt', 'https://dailynorthwestern.com')
+# sports and/or football
+collect_urls('2023/10/25', '2023/11/5', './data/urls_log.txt', 'https://dailynorthwestern.com')
