@@ -11,8 +11,7 @@ def count_entries(json_file_path):
     return num_entries
 
 if __name__ == "__main__":
-    # Replace 'twitter_results.json' with the actual path to your JSON file
-    json_file_path = 'twitter_results.json'
+    json_file_path = 'data/NorthwesternVolleyball-Jan24.json'
 
     # Call the function to count entries
     num_entries = count_entries(json_file_path)

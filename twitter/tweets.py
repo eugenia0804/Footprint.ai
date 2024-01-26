@@ -9,7 +9,7 @@ bearer_token = "AAAAAAAAAAAAAAAAAAAAAAYerwEAAAAAD4oZ%2BEFaIpI3SVTB3vkL8%2F5DxCQ%
 search_url = "https://api.twitter.com/2/tweets/search/recent"
 
 # Include all tweet fields in 'tweet.fields'
-query_params = {'query': 'Northwestern Football lang:en', 'tweet.fields': 'attachments,author_id,card_uri,context_annotations,conversation_id,created_at,edit_controls,edit_history_tweet_ids,entities,geo,id,in_reply_to_user_id,lang,note_tweet,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld', 'max_results': 10}
+query_params = {'query': 'Northwestern Volleyball lang:en', 'tweet.fields': 'attachments,author_id,card_uri,context_annotations,conversation_id,created_at,edit_controls,edit_history_tweet_ids,entities,geo,id,in_reply_to_user_id,lang,note_tweet,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld', 'max_results': 10}
 
 def bearer_oauth(r):
     """
@@ -32,6 +32,7 @@ def main():
 
     # Loop until there is no more next token
     while True:
+
         # Make a request to get results
         json_response = connect_to_endpoint(search_url, query_params)
 
@@ -47,7 +48,7 @@ def main():
         query_params['next_token'] = next_token
 
     # Store all results into a JSON file
-    with open('twitter_results.json', 'w') as json_file:
+    with open('data/NorthwesternVolleyball-Jan24.json', 'w') as json_file:
         json.dump(all_results, json_file, indent=4, sort_keys=True)
 
 if __name__ == "__main__":

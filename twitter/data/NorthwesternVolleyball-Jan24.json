@@ -1,0 +1,761 @@
+[
+    {
+        "author_id": "1569393812",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            }
+        ],
+        "conversation_id": "1749224461549662273",
+        "created_at": "2024-01-22T00:16:25.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-22T01:16:25.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": false
+        },
+        "edit_history_tweet_ids": [
+            "1749224461549662273"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 24,
+                    "normalized_text": "Viking",
+                    "probability": 0.7876,
+                    "start": 19,
+                    "type": "Other"
+                },
+                {
+                    "end": 33,
+                    "normalized_text": "Racer",
+                    "probability": 0.5937,
+                    "start": 29,
+                    "type": "Other"
+                },
+                {
+                    "end": 53,
+                    "normalized_text": "Gianna",
+                    "probability": 0.581,
+                    "start": 48,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 12,
+                    "id": "48666578",
+                    "start": 3,
+                    "username": "SJRState"
+                }
+            ]
+        },
+        "id": "1749224461549662273",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 0,
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 1
+        },
+        "referenced_tweets": [
+            {
+                "id": "1748103355681984834",
+                "type": "retweeted"
+            }
+        ],
+        "reply_settings": "everyone",
+        "text": "RT @SJRState: From Viking to Racer! Congrats to Gianna for committing to continue her volleyball and educational journey at the University\u2026"
+    },
+    {
+        "attachments": {
+            "media_keys": [
+                "3_1748742895589584896"
+            ]
+        },
+        "author_id": "474321515",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            }
+        ],
+        "conversation_id": "1748742899423150247",
+        "created_at": "2024-01-20T16:22:51.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-20T17:22:51.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": true
+        },
+        "edit_history_tweet_ids": [
+            "1748742899423150247"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 17,
+                    "normalized_text": "Thunder Volleyball",
+                    "probability": 0.5476,
+                    "start": 0,
+                    "type": "Other"
+                },
+                {
+                    "end": 49,
+                    "normalized_text": "Thunder Volleyball",
+                    "probability": 0.5023,
+                    "start": 32,
+                    "type": "Other"
+                },
+                {
+                    "end": 109,
+                    "normalized_text": "Northwestern Polytechnic",
+                    "probability": 0.7719,
+                    "start": 86,
+                    "type": "Organization"
+                },
+                {
+                    "end": 206,
+                    "normalized_text": "King Athletic Centre",
+                    "probability": 0.3828,
+                    "start": 187,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 178,
+                    "id": "965122770",
+                    "start": 167,
+                    "username": "NWP_Wolves"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/EuZqrw55zw",
+                    "end": 231,
+                    "expanded_url": "https://twitter.com/CUE_Athletics/status/1748742899423150247/photo/1",
+                    "media_key": "3_1748742895589584896",
+                    "start": 208,
+                    "url": "https://t.co/EuZqrw55zw"
+                }
+            ]
+        },
+        "id": "1748742899423150247",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 95,
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "reply_settings": "everyone",
+        "text": "Thunder Volleyball GAME DAY!\u26a1\ufe0f\n\nThunder Volleyball is back at home this afternoon vs. Northwestern Polytechnic \ud83c\udfd0 \n\n\u23f0 1:00PM &amp; 3:00PM (Doors open at 12:30pm)\n\ud83c\udfd0 vs. @NWP_Wolves \n\ud83d\udccdRalph King Athletic Centre https://t.co/EuZqrw55zw"
+    },
+    {
+        "attachments": {
+            "media_keys": [
+                "3_1748444681246269440"
+            ]
+        },
+        "author_id": "474321515",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            }
+        ],
+        "conversation_id": "1748444685411262814",
+        "created_at": "2024-01-19T20:37:52.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-19T21:37:52.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": true
+        },
+        "edit_history_tweet_ids": [
+            "1748444685411262814"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 30,
+                    "normalized_text": "Thunder Volleyball",
+                    "probability": 0.4331,
+                    "start": 13,
+                    "type": "Other"
+                },
+                {
+                    "end": 78,
+                    "normalized_text": "Northwestern Polytechnic",
+                    "probability": 0.7901,
+                    "start": 55,
+                    "type": "Organization"
+                },
+                {
+                    "end": 174,
+                    "normalized_text": "King Athletic Centre",
+                    "probability": 0.4173,
+                    "start": 155,
+                    "type": "Other"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 146,
+                    "id": "965122770",
+                    "start": 135,
+                    "username": "NWP_Wolves"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/WfaiJINMR8",
+                    "end": 199,
+                    "expanded_url": "https://twitter.com/CUE_Athletics/status/1748444685411262814/photo/1",
+                    "media_key": "3_1748444681246269440",
+                    "start": 176,
+                    "url": "https://t.co/WfaiJINMR8"
+                }
+            ]
+        },
+        "id": "1748444685411262814",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 99,
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 1,
+            "retweet_count": 0
+        },
+        "reply_settings": "everyone",
+        "text": "GAMEDAY! \ud83c\udf29\ufe0f\n\nThunder Volleyball is at home tonight vs. Northwestern Polytechnic \ud83c\udfd0 \n\n\u23f0 6:00PM &amp; 8:00PM (Doors open at 5:30pm)\n\ud83c\udfd0 vs. @NWP_Wolves \n\ud83d\udccdRalph King Athletic Centre https://t.co/WfaiJINMR8"
+    },
+    {
+        "author_id": "1746244183378034688",
+        "card_uri": "https://t.co/q6pThiaqfN",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Volleyball",
+                    "id": "847903333297799169",
+                    "name": "Volleyball"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "id": "1284135743791620096",
+                    "name": "College sports"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "id": "1286377759992766469",
+                    "name": "University of Nebraska\u2013Lincoln"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "id": "1298786179165216770",
+                    "name": "NCAA Women's Volleyball"
+                }
+            },
+            {
+                "domain": {
+                    "description": "Colleges & universities around the world",
+                    "id": "157",
+                    "name": "Colleges & Universities"
+                },
+                "entity": {
+                    "id": "1286377759992766469",
+                    "name": "University of Nebraska\u2013Lincoln"
+                }
+            }
+        ],
+        "conversation_id": "1748270275039203480",
+        "created_at": "2024-01-19T09:04:49.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-19T10:04:49.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": true
+        },
+        "edit_history_tweet_ids": [
+            "1748270275039203480"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 36,
+                    "normalized_text": "Northwestern Polytechnical University",
+                    "probability": 0.9189,
+                    "start": 0,
+                    "type": "Organization"
+                },
+                {
+                    "end": 41,
+                    "normalized_text": "NPU",
+                    "probability": 0.5699,
+                    "start": 39,
+                    "type": "Organization"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 127,
+                    "id": "19524352",
+                    "start": 120,
+                    "username": "volley"
+                },
+                {
+                    "end": 145,
+                    "id": "103519940",
+                    "start": 129,
+                    "username": "volleyballworld"
+                },
+                {
+                    "end": 162,
+                    "id": "1216291445054685184",
+                    "start": 147,
+                    "username": "Ran_volley0902"
+                },
+                {
+                    "end": 178,
+                    "id": "211228546",
+                    "start": 164,
+                    "username": "usavolleyball"
+                },
+                {
+                    "end": 195,
+                    "id": "707502574409289728",
+                    "start": 180,
+                    "username": "CEVolleyballCL"
+                },
+                {
+                    "end": 207,
+                    "id": "2601723858",
+                    "start": 197,
+                    "username": "er_volley"
+                },
+                {
+                    "end": 224,
+                    "id": "77290892",
+                    "start": 209,
+                    "username": "NCAAVolleyball"
+                },
+                {
+                    "end": 239,
+                    "id": "2833658343",
+                    "start": 226,
+                    "username": "CEVolleyball"
+                },
+                {
+                    "end": 250,
+                    "id": "36999945",
+                    "start": 241,
+                    "username": "HuskerVB"
+                },
+                {
+                    "end": 267,
+                    "id": "46684619",
+                    "start": 252,
+                    "username": "MSU_Volleyball"
+                }
+            ],
+            "urls": [
+                {
+                    "description": "Join our social media platformsJoin us for regular updates on fully funded scholarships, jobs in international organizations, and how to apply successfully: WhatsApp: JOIN\u00a0 or Telegram: JOIN Northwestern Polytechnical University (NPU) Scholarships for international students|Apply now Applications are invited from qualified and interested students to apply for Northwestern Polytechnical University (NPU) Scholarships to study Bachelors, [\u2026]",
+                    "display_url": "mcgregorinri.com/northwestern-p\u2026",
+                    "end": 118,
+                    "expanded_url": "https://mcgregorinri.com/northwestern-polytechnical-university-npu-scholarships-for-international-studentsapply-now/",
+                    "images": [
+                        {
+                            "height": 389,
+                            "url": "https://pbs.twimg.com/news_img/1748265756867878913/yKz7dcP-?format=jpg&name=orig",
+                            "width": 590
+                        },
+                        {
+                            "height": 150,
+                            "url": "https://pbs.twimg.com/news_img/1748265756867878913/yKz7dcP-?format=jpg&name=150x150",
+                            "width": 150
+                        }
+                    ],
+                    "start": 95,
+                    "status": 200,
+                    "title": "Northwestern Polytechnical University (NPU) Scholarships for international students|Apply now\u00a0 < Mcgregorinri.com",
+                    "unwound_url": "https://mcgregorinri.com/northwestern-polytechnical-university-npu-scholarships-for-international-studentsapply-now/",
+                    "url": "https://t.co/q6pThiaqfN"
+                }
+            ]
+        },
+        "id": "1748270275039203480",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 1,
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "reply_settings": "everyone",
+        "text": "Northwestern Polytechnical University (NPU) Scholarships for international students/Apply now\n\nhttps://t.co/q6pThiaqfN\n\n@volley \n@volleyballworld \n@Ran_volley0902 \n@usavolleyball \n@CEVolleyballCL \n@er_volley \n@NCAAVolleyball \n@CEVolleyball \n@HuskerVB \n@MSU_Volleyball"
+    },
+    {
+        "attachments": {
+            "media_keys": [
+                "3_1748103353135955968"
+            ]
+        },
+        "author_id": "48666578",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            },
+            {
+                "domain": {
+                    "description": "States, provinces, or prefectures, like California or Fukushima Prefecture",
+                    "id": "159",
+                    "name": "States"
+                },
+                "entity": {
+                    "description": "Ohio",
+                    "id": "1010253454822895616",
+                    "name": "Ohio"
+                }
+            }
+        ],
+        "conversation_id": "1748103355681984834",
+        "created_at": "2024-01-18T22:01:32.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-18T23:01:32.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": true
+        },
+        "edit_history_tweet_ids": [
+            "1748103355681984834"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 10,
+                    "normalized_text": "Viking",
+                    "probability": 0.6242,
+                    "start": 5,
+                    "type": "Other"
+                },
+                {
+                    "end": 19,
+                    "normalized_text": "Racer",
+                    "probability": 0.3537,
+                    "start": 15,
+                    "type": "Other"
+                },
+                {
+                    "end": 39,
+                    "normalized_text": "Gianna",
+                    "probability": 0.534,
+                    "start": 34,
+                    "type": "Person"
+                },
+                {
+                    "end": 144,
+                    "normalized_text": "University of Northwestern Ohio",
+                    "probability": 0.7921,
+                    "start": 114,
+                    "type": "Organization"
+                },
+                {
+                    "end": 172,
+                    "normalized_text": "OnceAVikingAlwaysAViking",
+                    "probability": 0.4819,
+                    "start": 149,
+                    "type": "Organization"
+                },
+                {
+                    "end": 206,
+                    "normalized_text": "SJRState",
+                    "probability": 0.7696,
+                    "start": 199,
+                    "type": "Organization"
+                },
+                {
+                    "end": 221,
+                    "normalized_text": "SJRStateProud",
+                    "probability": 0.748,
+                    "start": 209,
+                    "type": "Organization"
+                }
+            ],
+            "hashtags": [
+                {
+                    "end": 173,
+                    "start": 148,
+                    "tag": "OnceAVikingAlwaysAViking"
+                },
+                {
+                    "end": 207,
+                    "start": 198,
+                    "tag": "SJRState"
+                },
+                {
+                    "end": 222,
+                    "start": 208,
+                    "tag": "SJRStateProud"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 186,
+                    "id": "29214093",
+                    "start": 175,
+                    "username": "UNOHRacers"
+                },
+                {
+                    "end": 196,
+                    "id": "273489035",
+                    "start": 187,
+                    "username": "UNOH_edu"
+                }
+            ],
+            "urls": [
+                {
+                    "display_url": "pic.twitter.com/TqgDfgXysO",
+                    "end": 246,
+                    "expanded_url": "https://twitter.com/SJRState/status/1748103355681984834/photo/1",
+                    "media_key": "3_1748103353135955968",
+                    "start": 223,
+                    "url": "https://t.co/TqgDfgXysO"
+                }
+            ]
+        },
+        "id": "1748103355681984834",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 79,
+            "like_count": 4,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 1
+        },
+        "reply_settings": "everyone",
+        "text": "From Viking to Racer! Congrats to Gianna for committing to continue her volleyball and educational journey at the University of Northwestern Ohio \ud83c\udfd0 #OnceAVikingAlwaysAViking\n\n@UNOHRacers @UNOH_edu\n\n#SJRState #SJRStateProud https://t.co/TqgDfgXysO"
+    },
+    {
+        "author_id": "963606578208411648",
+        "context_annotations": [
+            {
+                "domain": {
+                    "description": "Categories within Brand Verticals that narrow down the scope of Brands",
+                    "id": "46",
+                    "name": "Business Taxonomy"
+                },
+                "entity": {
+                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to sports nutrition, athletic apparel, sports apps, fitness venues",
+                    "id": "1557697289971322880",
+                    "name": "Sports & Fitness Business"
+                }
+            },
+            {
+                "domain": {
+                    "description": "A taxonomy of user interests. ",
+                    "id": "131",
+                    "name": "Unified Twitter Taxonomy"
+                },
+                "entity": {
+                    "description": "Sports",
+                    "id": "847900493514891265",
+                    "name": "Sports"
+                }
+            }
+        ],
+        "conversation_id": "1748041355652432364",
+        "created_at": "2024-01-18T19:06:24.000Z",
+        "edit_controls": {
+            "editable_until": "2024-01-18T20:06:24.000Z",
+            "edits_remaining": 5,
+            "is_edit_eligible": false
+        },
+        "edit_history_tweet_ids": [
+            "1748059282409443401"
+        ],
+        "entities": {
+            "annotations": [
+                {
+                    "end": 108,
+                    "normalized_text": "Northwestern",
+                    "probability": 0.8885,
+                    "start": 97,
+                    "type": "Organization"
+                }
+            ],
+            "mentions": [
+                {
+                    "end": 11,
+                    "id": "423740327",
+                    "start": 0,
+                    "username": "emilyehman"
+                },
+                {
+                    "end": 26,
+                    "id": "347965214",
+                    "start": 12,
+                    "username": "B1GVolleyball"
+                }
+            ]
+        },
+        "id": "1748059282409443401",
+        "in_reply_to_user_id": "423740327",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "public_metrics": {
+            "bookmark_count": 0,
+            "impression_count": 71,
+            "like_count": 0,
+            "quote_count": 0,
+            "reply_count": 0,
+            "retweet_count": 0
+        },
+        "referenced_tweets": [
+            {
+                "id": "1748041355652432364",
+                "type": "replied_to"
+            }
+        ],
+        "reply_settings": "everyone",
+        "text": "@emilyehman @B1GVolleyball You could also announce that you are the new head volleyball coach at Northwestern."
+    }
+]
