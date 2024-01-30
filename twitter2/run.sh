@@ -1,1 +1,1 @@
-python scraper --query="Football from:insidenu until:2023-12-24 since:2023-07-07" -t 1000
+python scraper --query="Northwestern Wildcat Football -from:insidenu until:2023-12-24 since:2023-07-07" -t 10000
