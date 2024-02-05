@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "time": "2024-01-31_16-53-13",
+    "query": "from:insidenu until:2023-12-24 since:2023-07-07",
+    "count": 1003
+  },
+  {
+    "id": 2,
+    "time": "2024-01-31_17-14-15",
+    "query": "from:insidenu until:2023-11-25 since:2023-07-07",
+    "count": 1011
+  },
+  {
+    "id": 3,
+    "time": "2024-02-03_14-16-30",
+    "query": "Northwestern Football (hazing or scandal) -from:insidenu until:2023-12-24 since:2023-07-07",
+    "count": 994
+  },
+  {
+    "id": 4,
+    "time": "2024-02-05_13-25-03",
+    "query": "Northwestern Football (hazing or scandal) -from:insidenu until:2023-07-19 since:2023-07-07",
+    "count": 1115
+  }
+]
