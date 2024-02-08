@@ -84,8 +84,23 @@ def collect_articles(url_path, storage_path):
 # print('\n')
 
 
-collect_articles('data/insidenu_urls_log.txt', 'data/inside_data.csv')
+# collect_articles('data/insidenu_urls_log.txt', 'data/inside_data_test.csv')
+
+# pd.DataFrame([scrape_article('https://www.insidenu.com/2023/12/24/24013883/northwestern-footballs-las-vegas-bowl-win-caps-a-legendary-season-and-a-foundational-one')]).to_csv('data/inside_data_test.csv', mode='a', header=False, index=False)
+
+#test = requests.get('https://www.insidenu.com/2023/11/16/23934334/how-new-head-coach-rachel-stratton-mills-plans-on-taking-northwestern-swim-and-dive-to-new-heights')
+#print(BeautifulSoup(test.text).find_all('p'))
 
 '''
 this code could be optimized in the future by removing automatically any 'fanshot' links, as I did it by hand this time
 '''
+
+def features_text(urls):
+    for i in urls:
+        r = requests.get(i)
+        soup = BeautifulSoup(r.text)
+        text = [x.text for x in soup.find_all(['p', "h2"])]
+        print(text)
+
+features_text(['https://www.insidenu.com/2023/11/6/23948753/gets-court-switch-turn-tiger-wildcat-northwestern-transfer-ryan-langborg-build-march-madness-big-ten', 
+               'https://www.insidenu.com/2023/11/16/23934334/how-new-head-coach-rachel-stratton-mills-plans-on-taking-northwestern-swim-and-dive-to-new-heights'])
