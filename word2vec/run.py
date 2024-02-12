@@ -7,6 +7,8 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import json
+import os
+from matplotlib.animation import FuncAnimation
 
 def preprocess(text):
     lemmatizer = WordNetLemmatizer()
@@ -34,13 +36,17 @@ def get_word_similarities(model, target_word, tokens):
             word_similarities[word] = similarity
     return word_similarities
 
-def generate_word_cloud(word_similarities, title):
+def generate_word_cloud(word_similarities, title, save_dir, index):
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    save_path = os.path.join(save_dir, f"wordcloud_{index}.png")
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(word_similarities)
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.title(title)
     plt.axis('off')
-    plt.show()
+    plt.savefig(save_path)
+    plt.close()
 
 def main(input_csv, target_word):
     nltk.download('punkt')
@@ -54,6 +60,8 @@ def main(input_csv, target_word):
 
     all_word_similarities = {}
 
+    save_dir = 'word2vec/images/keyword-tweets'
+    
     for index, row in df.iterrows():
         # Preprocess text data
         tokens = preprocess(row['text'])
@@ -67,7 +75,7 @@ def main(input_csv, target_word):
         start_timestamp = row['start_timestamp']
         end_timestamp = row['end_timestamp']
         title = f"{start_timestamp} - {end_timestamp}"
-        generate_word_cloud(word_similarities, title)
+        generate_word_cloud(word_similarities, title, save_dir, index)
 
         # Convert float32 values to regular floats
         word_similarities = {word: float(similarity) for word, similarity in word_similarities.items()}
@@ -78,7 +86,6 @@ def main(input_csv, target_word):
     # Save all word similarities to a JSON file
     with open('word2vec/word_similarities.json', 'w') as f:
         json.dump(all_word_similarities, f)
-
 
 if __name__ == "__main__":
     input_csv = 'word2vec/keyword.csv'  # Replace with your input CSV file path
