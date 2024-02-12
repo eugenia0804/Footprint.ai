@@ -23,18 +23,22 @@ def remove_stopwords(tokens):
 def remove_punctuations(tokens):
     return [word for word in tokens if word.isalnum()]
 
-def train_word2vec_model(texts, min_count=2):
+def train_word2vec_model(texts, min_count=1):
     sentences = [preprocess(text) for text in texts]
     model = gensim.models.Word2Vec(sentences, min_count=min_count)
     return model
 
 def get_word_similarities(model, target_word, tokens):
     word_similarities = {}
-    for word in tokens:
-        if word in model.wv.key_to_index:
-            similarity = model.wv.similarity(target_word, word)
-            word_similarities[word] = similarity
+    try:
+        for word in tokens:
+            if word in model.wv.key_to_index:
+                similarity = model.wv.similarity(target_word, word)
+                word_similarities[word] = similarity
+    except KeyError as e:
+        print(f"Word '{e.args[0]}' not present in the Word2Vec model.")
     return word_similarities
+
 
 def generate_word_cloud(word_similarities, title, save_dir, index):
     if not os.path.exists(save_dir):
@@ -48,6 +52,7 @@ def generate_word_cloud(word_similarities, title, save_dir, index):
     plt.savefig(save_path)
     plt.close()
 
+
 def main(input_csv, target_word):
     nltk.download('punkt')
     nltk.download('stopwords')
@@ -55,37 +60,41 @@ def main(input_csv, target_word):
     # Read CSV file
     df = pd.read_csv(input_csv)
 
-    # Train Word2Vec model
-    model = train_word2vec_model(df['text'])
-
     all_word_similarities = {}
 
     save_dir = 'word2vec/images/keyword-tweets'
-    
     for index, row in df.iterrows():
         # Preprocess text data
         tokens = preprocess(row['text'])
         tokens = remove_stopwords(tokens)
         tokens = remove_punctuations(tokens)
 
-        # Get word similarities
-        word_similarities = get_word_similarities(model, target_word, tokens)
+        # Train Word2Vec model
+        model = train_word2vec_model([' '.join(tokens)])  # Join tokens into a single string
 
-        # Generate word cloud with time range as title
-        start_timestamp = row['start_timestamp']
-        end_timestamp = row['end_timestamp']
-        title = f"{start_timestamp} - {end_timestamp}"
-        generate_word_cloud(word_similarities, title, save_dir, index)
+        # Check if target word is in the model's vocabulary
+        if target_word in model.wv.key_to_index:
+            # Get word similarities
+            word_similarities = get_word_similarities(model, target_word, tokens)
 
-        # Convert float32 values to regular floats
-        word_similarities = {word: float(similarity) for word, similarity in word_similarities.items()}
+            # Generate word cloud with time range as title
+            start_timestamp = row['start_timestamp']
+            end_timestamp = row['end_timestamp']
+            title = f"{start_timestamp} - {end_timestamp}"
+            generate_word_cloud(word_similarities, title, save_dir, index)
 
-        # Save word similarities to dictionary
-        all_word_similarities[title] = word_similarities
+            # Convert float32 values to regular floats
+            word_similarities = {word: float(similarity) for word, similarity in word_similarities.items()}
+
+            # Save word similarities to dictionary
+            all_word_similarities[title] = word_similarities
+        else:
+            print(f"Target word '{target_word}' not present in the Word2Vec model for row {index}.")
 
     # Save all word similarities to a JSON file
     with open('word2vec/word_similarities.json', 'w') as f:
         json.dump(all_word_similarities, f)
+
 
 if __name__ == "__main__":
     input_csv = 'word2vec/keyword.csv'  # Replace with your input CSV file path
