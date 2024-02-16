@@ -23,7 +23,22 @@ def remove_stopwords(tokens):
 def remove_punctuations(tokens):
     return [word for word in tokens if word.isalnum()]
 
-def train_word2vec_model(texts, min_count=1):
+def custom_token_generation(tokens):
+    custom_tokens = []
+    i = 0
+    while i < len(tokens):
+        if i < len(tokens) - 1 and tokens[i].lower() == 'pat' and tokens[i+1].lower() == 'fitzgerald':
+            custom_tokens.append('Pat Fitzgerald')
+            i += 2
+        elif tokens[i].lower() in ['nu', 'northwestern']:
+            custom_tokens.append('Northwestern')
+            i += 1
+        else:
+            custom_tokens.append(tokens[i])
+            i += 1
+    return custom_tokens
+
+def train_word2vec_model(texts, min_count=3):
     sentences = [preprocess(text) for text in texts]
     model = gensim.models.Word2Vec(sentences, min_count=min_count)
     return model
@@ -50,6 +65,7 @@ def generate_word_cloud(word_similarities, title, save_dir, index):
     plt.title(title)
     plt.axis('off')
     plt.savefig(save_path)
+    #plt.show
     plt.close()
 
 
@@ -62,12 +78,13 @@ def main(input_csv, target_word):
 
     all_word_similarities = {}
 
-    save_dir = 'word2vec/images/keyword-tweets'
+    save_dir = 'word2vec/images/new_keyword-tweets'
     for index, row in df.iterrows():
         # Preprocess text data
         tokens = preprocess(row['text'])
         tokens = remove_stopwords(tokens)
         tokens = remove_punctuations(tokens)
+        tokens = custom_token_generation(tokens)
 
         # Train Word2Vec model
         model = train_word2vec_model([' '.join(tokens)])  # Join tokens into a single string
@@ -97,6 +114,6 @@ def main(input_csv, target_word):
 
 
 if __name__ == "__main__":
-    input_csv = 'word2vec/keyword.csv'  # Replace with your input CSV file path
+    input_csv = 'word2vec/data/keyword.csv'  # Replace with your input CSV file path
     target_word = 'Northwestern'  # Replace with your target word
     main(input_csv, target_word)

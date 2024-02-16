@@ -46,7 +46,7 @@ def get_text_by_week(df, output_file):
     df['Content'] = df['Content'].fillna('')  # Replace NaN with empty string
     
     # Group by week and concatenate text data, then remove links
-    text_by_week = df.groupby(df['Timestamp'].dt.strftime('%U')).agg(
+    text_by_week = df.groupby(pd.Grouper(key='Timestamp', freq='5D')).agg(
         text=('Content', ' '.join),
         count=('Content', 'count'),
         start_timestamp=('Timestamp', 'min'),
@@ -61,7 +61,30 @@ def get_text_by_week(df, output_file):
     text_by_week.to_csv(output_file, index=False)
 
 
+def get_text_by_num_tweets(df, output_file, num_tweets):
+    # Convert 'Timestamp' column to datetime
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'], format='%Y-%m-%dT%H:%M:%S.%fZ')
+    
+    # Handle NaN values in 'Content' column
+    df['Content'] = df['Content'].fillna('')  # Replace NaN with empty string
+    
+    # Group by every ten tweets and concatenate text data, then remove links
+    group_indices = pd.Series(range(len(df))) // num_tweets
+    grouped_df = df.groupby(group_indices).agg(
+        text=('Content', ' '.join),
+        count=('Content', 'count'),
+        start_timestamp=('Timestamp', 'min'),
+        end_timestamp=('Timestamp', 'max')
+    )
+    grouped_df['text'] = grouped_df['text'].apply(remove_links)
+    
+    # Reset index to make 'Timestamp' a column again
+    grouped_df.reset_index(drop=True, inplace=True)
+    
+    # Save DataFrame to CSV
+    grouped_df.to_csv(output_file, index=False)
+
 
 df_inside, df_keyword = get_data()
-get_text_by_week(df_inside,'word2vec/inside.csv')
-get_text_by_week(df_keyword,'word2vec/keyword.csv')
+get_text_by_week(df_inside,'word2vec/data/inside.csv')
+get_text_by_num_tweets(df_keyword,'word2vec/data/keyword.csv', 50)
