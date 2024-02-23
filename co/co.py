@@ -49,7 +49,7 @@ def check_cocurrent(text, center_keyword, comparison_keyword):
         return False
 
 
-def calculate_weekly_percentage(df, center_keyword, comparison_keywords):
+def calculate_weekly_percentage_df(df, center_keyword, comparison_keywords):
     weekly_percentages = {}
     for comparison_keyword in comparison_keywords:
         df['cocurrent'] = df['Content'].apply(lambda x: check_cocurrent(x, center_keyword, comparison_keyword))
@@ -59,9 +59,35 @@ def calculate_weekly_percentage(df, center_keyword, comparison_keywords):
         total_entries = df.groupby('week').size()  # Total number of entries per week
         weekly_percentage = (weekly_counts / total_entries) * 100  # Calculate percentage
         weekly_percentages[comparison_keyword] = weekly_percentage
-    print(weekly_percentages)
-    return weekly_percentages
 
+    # Create a DataFrame from the weekly_percentages dictionary
+    df_weekly_percentage = pd.DataFrame(weekly_percentages)
+    
+    # Save the DataFrame to a CSV file
+    df_weekly_percentage.to_csv(f'co/weekly_percentage_with_{center_keyword}.csv', index=True)  # Change 'weekly_percentage_data.csv' to desired filename
+    return df_weekly_percentage
+
+def calculate_weekly_percentage_df_7days(df, center_keyword, comparison_keywords):
+    weekly_percentages = {}
+    for comparison_keyword in comparison_keywords:
+        df['cocurrent'] = df['Content'].apply(lambda x: check_cocurrent(x, center_keyword, comparison_keyword))
+        df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+        df['interval'] = df['Timestamp'].dt.floor('7D')  # Round down to the nearest 7-day interval
+        weekly_counts = df.groupby('interval')['cocurrent'].sum()  # Count occurrences where both keywords appear together
+        total_entries = df.groupby('interval').size()  # Total number of entries per interval
+        weekly_percentage = (weekly_counts / total_entries) * 100  # Calculate percentage
+        weekly_percentages[comparison_keyword] = weekly_percentage
+
+    # Create a DataFrame from the weekly_percentages dictionary
+    df_weekly_percentage = pd.DataFrame(weekly_percentages)
+    
+    # Save the DataFrame to a CSV file
+    df_weekly_percentage.to_csv(f'co/weekly_percentage_with_{center_keyword}_7days.csv', index=True)  # Change 'weekly_percentage_data.csv' to desired filename
+    return df_weekly_percentage
+
+
+
+'''
 def plot_weekly_percentage(weekly_percentages, center_keyword, comparison_keywords):
     plt.figure(figsize=(10, 6))
     for comparison_keyword in comparison_keywords:
@@ -75,11 +101,12 @@ def plot_weekly_percentage(weekly_percentages, center_keyword, comparison_keywor
     plt.tight_layout()
     plt.show
     plt.savefig("co/image.png")
+'''
 
 df = keyword
-center_keyword = "hazing"
-comparison_keywords = ["football", "baseball", "volleyball"]
+center_keyword = "northwestern"
+comparison_keywords = ["football", "baseball", "volleyball", "hazing", "scandal", "fire", "lawsuit", "coach", "allegation"]
 
-weekly_percentages = calculate_weekly_percentage(df, center_keyword, comparison_keywords)
+calculate_weekly_percentage_df_7days(df, center_keyword, comparison_keywords)
 
-plot_weekly_percentage(weekly_percentages, center_keyword, comparison_keywords)
+#plot_weekly_percentage(weekly_percentages, center_keyword, comparison_keywords)

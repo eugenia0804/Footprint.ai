@@ -18,10 +18,10 @@ def preprocess(text):
 
 def remove_stopwords(tokens):
     stop_words = set(stopwords.words('english'))
-    return [word for word in tokens if word.lower() not in stop_words]
+    return [word.lower() for word in tokens if word.lower() not in stop_words]
 
 def remove_punctuations(tokens):
-    return [word for word in tokens if word.isalnum()]
+    return [word.lower() for word in tokens if word.isalnum()]
 
 def custom_token_generation(tokens):
     custom_tokens = []
@@ -32,6 +32,9 @@ def custom_token_generation(tokens):
             i += 2
         elif tokens[i].lower() in ['nu', 'northwestern']:
             custom_tokens.append('Northwestern')
+            i += 1
+        elif tokens[i].lower() in ['football', 'Football']:
+            custom_tokens.append('football')
             i += 1
         else:
             custom_tokens.append(tokens[i])

@@ -87,4 +87,4 @@ def get_text_by_num_tweets(df, output_file, num_tweets):
 
 df_inside, df_keyword = get_data()
 get_text_by_week(df_inside,'word2vec/data/inside.csv')
-get_text_by_num_tweets(df_keyword,'word2vec/data/keyword.csv', 50)
+get_text_by_num_tweets(df_keyword,'word2vec/data/keyword.csv', 100)
