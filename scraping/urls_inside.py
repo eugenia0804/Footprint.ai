@@ -51,37 +51,40 @@ def collect_urls(start: str, end: str, path: str, baseurl:str):
 
     #loop through all dates in the range, extract urls
     # for d in tqdm(dates):
-    #for x in tqdm(range(9, 13)):
-    for y in tqdm(range(6, 17)):
-        x = 11
-        day = f"{x}/{y}"
-        url = f'{baseurl}/{2023}/{day}'
-        #print(url)
-        r = requests.get(url)
-        txt = r.text
-        soup = BeautifulSoup(txt, features="html.parser")
-        classes = soup.find_all('h2', {'class': 'c-entry-box--compact__title'})
-        links = []
-        for i in classes:
-            for j in i.find_all('a', href=True):
-                links += [j]
-        hrefs = [i['href'] for i in links if day in i['href']]
-        if path.exists():
-            mode = 'a'
-        else:
-            mode = 'w'
-        with open(path, mode) as f:
-            for link in hrefs:
-                f.write(f"{link}\n")
+    for x in tqdm(range(5, 7)):
+        # oops forgot to do 31st days
+        for y in tqdm(range(32)):
+            #x = 9
+            day = f"{x}/{y}"
+            url = f'{baseurl}/{2023}/{day}'
+            #print(url)
+            r = requests.get(url)
+            txt = r.text
+            soup = BeautifulSoup(txt, features="html.parser")
+            classes = soup.find_all('h2', {'class': 'c-entry-box--compact__title'})
+            links = []
+            for i in classes:
+                for j in i.find_all('a', href=True):
+                    links += [j]
+            hrefs = [i['href'] for i in links if day in i['href']]
+            if path.exists():
+                mode = 'a'
+            else:
+                mode = 'w'
+            with open(path, mode) as f:
+                for link in hrefs:
+                    f.write(f"{link}\n")
 
         
+            sleep(1)
         sleep(1)
 
 #start: 07/07
 #end: 12/24
 # sports and/or football
-collect_urls('2023/07/07', '2023/12/24', './data/insidenu_urls_log.txt', 'https://www.insidenu.com/archives')
+collect_urls('2023/07/07', '2023/12/24', './data/insidenu_urls_BEFORE_log.txt', 'https://www.insidenu.com/archives')
 #collect_urls('2023/7/7', '2023/7/8', './data/insidenu_urls_log.txt', 'https://www.insidenu.com/archives')
 
 
 #print(requests.get('https://www.insidenu.com/archives/2023/7/7').text)
+#need 31st of july, 31st of august

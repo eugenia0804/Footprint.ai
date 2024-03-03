@@ -25,37 +25,39 @@ def scrape_article(url: str):
     }
     r = requests.get(url, headers=headers)
     soup = BeautifulSoup(r.text, features="html.parser")
-    pub_dt = soup.find("time")['datetime']
+    titles = [x.text for x in soup.find_all(["h2"])]
+    if titles[0] != "FanShot":
+        pub_dt = soup.find("time")['datetime']
 
-    try:
-        authors = soup.find_all("span", {'class': 'c-byline-wrapper'})[0].text
-    except IndexError or AttributeError:
-         authors = ''
-    try:
-        hed = soup.find("h1").contents[0]
-    except IndexError:
-        hed = ""
+        try:
+            authors = soup.find_all("span", {'class': 'c-byline-wrapper'})[0].text
+        except IndexError or AttributeError:
+            authors = ''
+        try:
+            hed = soup.find("h1").contents[0]
+        except IndexError:
+            hed = ""
 
-    try:
-        art = soup.find("article")
-        text = [i.text for i in art.find_all(["p", "h2"])]
-    except AttributeError:
-        text = ""
-    try:
-        comment_num = soup.find_all("span", {'class': "coral-count-number"})
-    except AttributeError or IndexError:
-        comment_num = 0
+        try:
+            art = soup.find("article")
+            text = [i.text for i in art.find_all(["p", "h2"])]
+        except AttributeError:
+            text = ""
+        try:
+            comment_num = soup.find_all("span", {'class': "coral-count-number"})
+        except AttributeError or IndexError:
+            comment_num = 0
 
-    result = {
-        "url": url,
-        "pub_date": pub_dt,
-        "authors": authors,
-        "hed": hed,
-        "article_text": text,
-        'article_comment_num': comment_num
-    }
+        result = {
+            "url": url,
+            "pub_date": pub_dt,
+            "authors": authors,
+            "hed": hed,
+            "article_text": text,
+            'article_comment_num': comment_num
+        }
 
-    return result
+        return result
 
 def collect_articles(url_path, storage_path):
     """
@@ -84,7 +86,7 @@ def collect_articles(url_path, storage_path):
 # print('\n')
 
 
-# collect_articles('data/insidenu_urls_log.txt', 'data/inside_data_test.csv')
+# collect_articles('data/insidenu_urls_BEFORE_log.txt', 'data/inside_data_BEFORE.csv')
 
 # pd.DataFrame([scrape_article('https://www.insidenu.com/2023/12/24/24013883/northwestern-footballs-las-vegas-bowl-win-caps-a-legendary-season-and-a-foundational-one')]).to_csv('data/inside_data_test.csv', mode='a', header=False, index=False)
 
@@ -99,8 +101,8 @@ def features_text(urls):
     for i in urls:
         r = requests.get(i)
         soup = BeautifulSoup(r.text)
-        text = [x.text for x in soup.find_all(['p', "h2"])]
-        print(text)
+        text = [x.text for x in soup.find_all(["p"])]
+        print(text, "\n\n")
 
-features_text(['https://www.insidenu.com/2023/11/6/23948753/gets-court-switch-turn-tiger-wildcat-northwestern-transfer-ryan-langborg-build-march-madness-big-ten', 
-               'https://www.insidenu.com/2023/11/16/23934334/how-new-head-coach-rachel-stratton-mills-plans-on-taking-northwestern-swim-and-dive-to-new-heights'])
+features_text(['https://www.insidenu.com/2023/5/26/23737809/with-super-regionals-on-the-horizon-for-northwestern-softball-ties-to-2007-team-become-clear', 
+               'https://www.insidenu.com/2023/6/13/23759047/put-that-whole-team-on-his-back-how-northwestern-boosted-quarterback-dan-persas-2011-heisman-hopes'])
