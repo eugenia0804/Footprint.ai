@@ -3,7 +3,7 @@ __pycache__/
 co/twitter/*.csv
 co/corpus/data
 twitter/tweets
-word2vec/data
-word2vec/txt
+word2vec/data/
+word2vec/txt/
 word2vec/*.csv
 word2vec/*.json
