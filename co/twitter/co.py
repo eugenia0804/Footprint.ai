@@ -81,8 +81,19 @@ def calculate_weekly_percentage_df_7days(df, center_keyword, comparison_keywords
     # Create a DataFrame from the weekly_percentages dictionary
     df_weekly_percentage = pd.DataFrame(weekly_percentages)
     
+    summed_data = {}
+    words = ["Scandal", "Misconduct", "Haz", "Fir", "Alleg", "Lawsuit", "Su"]
+    for word in words:
+        variations = [col for col in df_weekly_percentage.columns if word in col]
+        summed_data[word] = df_weekly_percentage[variations].sum(axis=1)
+
+    # Creating a new DataFrame with summed data
+    summed_df = pd.DataFrame(summed_data)
+
+    print(summed_df)
+    
     # Save the DataFrame to a CSV file
-    df_weekly_percentage.to_csv(f'co/weekly_percentage_with_{center_keyword}_7days.csv', index=True)  # Change 'weekly_percentage_data.csv' to desired filename
+    summed_df.to_csv(f'co/weekly_percentage_with_{center_keyword}_7days_sum.csv', index=True)  # Change 'weekly_percentage_data.csv' to desired filename
     return df_weekly_percentage
 
 
@@ -104,8 +115,8 @@ def plot_weekly_percentage(weekly_percentages, center_keyword, comparison_keywor
 '''
 
 df = keyword
-center_keyword = "northwestern"
-comparison_keywords = ["football", "baseball", "volleyball", "hazing", "scandal", "fire", "lawsuit", "coach", "allegation"]
+center_keyword = "baseball"
+comparison_keywords = ["Scandal", "Scandals", "Misconduct", "Misconducts", "Hazing", "Hazed", "Hazes", "Haze", "Firing", "Fired", "Fire", "Fires", "Allegations", "Allegation", "Allege", "Alleges", "Alleged", "Alleging", "Lawsuit", "Lawsuits", "Sue", "Sues", "Sued", "Suing"]
 
 calculate_weekly_percentage_df_7days(df, center_keyword, comparison_keywords)
 

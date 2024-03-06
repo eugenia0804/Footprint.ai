@@ -12,21 +12,22 @@ rows = []
 for key, value in data.items():
     end_time = key.split(" - ")[1]  # Extract end time from key
     row_data = {'end_time': end_time}
-    # Multiply each value by 100
-    row_data.update({k: v * 100 for k, v in value.items()})
+    # Find top 10 words with highest similarity score
+    top_words = sorted(value.items(), key=lambda x: x[1], reverse=True)[:20]
+    for word, score in top_words:
+        row_data[word] = score * 100  # Multiply each value by 100
     rows.append(row_data)
 
 # Create DataFrame from the list of rows
 df = pd.DataFrame(rows)
-
-# Fill missing values with 0
-#df.fillna(0, inplace=True)
 
 # Reverse the order of all rows
 df_reversed = df[::-1]
 
 # Transpose the DataFrame
 df_transposed = df_reversed.transpose()
+
+#df_transposed.ffill(axis=1, inplace=True)
 
 print(df_transposed.columns.tolist())
 print(len(df_transposed.columns.tolist()) == len(set(df_transposed.columns.tolist())))
