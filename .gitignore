@@ -7,3 +7,4 @@ word2vec/data/
 word2vec/txt/
 word2vec/*.csv
 word2vec/*.json
+twitter/.env
